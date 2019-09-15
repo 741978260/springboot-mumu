@@ -1,6 +1,5 @@
 HELP.md
 /target/
-/logs/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -28,5 +27,3 @@ HELP.md
 
 ### VS Code ###
 .vscode/
-.gitignore
-pom.xml
