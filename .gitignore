@@ -27,3 +27,5 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+mumu-web/src/test/
+mumu-web/target/
