@@ -1,1 +1,15 @@
-
+server:
+  port: 9587
+spring:
+  datasource:
+    hikari:
+      master:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://127.0.0.1:3306/boltloan?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 123456
+      slave:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        jdbcUrl: jdbc:mysql://127.0.0.1:3306/d_credit?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 123456
