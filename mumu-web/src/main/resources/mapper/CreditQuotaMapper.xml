@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mumu.persistence.mapper.CreditQuotaMapper">
+<mapper namespace="com.mumu.persistence.mapper.InventoryMapper">
 
-    <select id="queryById" resultType="com.mumu.model.CreditQuota">
-        SELECT * FROM t_param_config where id = #{id}
+    <select id="queryById" resultType="com.mumu.model.Inventory">
+        SELECT * FROM Inventory where id = #{id}
     </select>
 
 </mapper>

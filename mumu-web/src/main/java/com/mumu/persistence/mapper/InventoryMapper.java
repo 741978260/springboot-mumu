@@ -1,6 +1,6 @@
 package com.mumu.persistence.mapper;
 
-import com.mumu.model.CreditQuota;
+import com.mumu.model.Inventory;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
@@ -9,6 +9,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date on 2019/11/25
  */
 @Mapper
-public interface CreditQuotaMapper {
-    CreditQuota queryById(Integer id);
+public interface InventoryMapper {
+    Inventory queryById(Integer id);
 }

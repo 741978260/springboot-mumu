@@ -1,7 +1,6 @@
 package com.mumu.common.datasources.aspect;
 
 import com.mumu.common.datasources.DataSourceNames;
-import com.mumu.common.datasources.DynamicDataSource;
 import com.mumu.common.datasources.DynamicDataSourceContextHolder;
 import com.mumu.common.datasources.annotation.DataSource;
 import lombok.extern.slf4j.Slf4j;
@@ -23,8 +22,7 @@ import java.lang.reflect.Method;
 @Aspect
 @Component
 @Slf4j
-// 该切面应当先于 @Transactional 执行
-@Order(-1)
+@Order(-1)// 该切面应当先于 @Transactional 执行
 public class DynamicDataSourceAspect {
     @Pointcut("@annotation(com.mumu.common.datasources.annotation.DataSource)")
     public void dataSourcePointCut() {

@@ -1,9 +1,9 @@
 package com.mumu.web;
 
 import com.mumu.model.AddressBook;
-import com.mumu.model.CreditQuota;
+import com.mumu.model.Inventory;
 import com.mumu.service.AddressBookService;
-import com.mumu.service.CreditQuotaService;
+import com.mumu.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +22,7 @@ public class TestController {
     @Autowired
     private AddressBookService addressBookService;
     @Autowired
-    private CreditQuotaService creditQuotaService;
+    private InventoryService inventoryService;
 
     @RequestMapping("/query/{bookId}")
     public void test(@PathVariable("bookId") Integer bookId) {
@@ -32,7 +32,7 @@ public class TestController {
 
     @GetMapping("/credit/query")
     public void test() {
-        final CreditQuota creditQuota = creditQuotaService.queryById(1);
-        System.out.println(creditQuota.toString());
+        Inventory inventory = inventoryService.queryById(1);
+        System.out.println(inventory.toString());
     }
 }
