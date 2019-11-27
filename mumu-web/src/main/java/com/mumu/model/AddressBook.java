@@ -22,7 +22,7 @@ public class AddressBook {
     /**
      * 客户id
      */
-    private long custId;
+    private Long custId;
     /**
      * 姓名
      */

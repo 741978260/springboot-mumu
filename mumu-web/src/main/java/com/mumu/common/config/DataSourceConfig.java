@@ -1,5 +1,6 @@
 package com.mumu.common.config;
 
+import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.mumu.common.datasources.DataSourceNames;
 import com.mumu.common.datasources.DynamicDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -57,12 +58,16 @@ public class DataSourceConfig {
 
     @Bean("sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory() throws Exception {
-        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+//        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean(); // 使用mybatis的全局配置文件
+        //使用mybatisplus的工程bean，mybatis-plus的全局配置文件才会生效
+        MybatisSqlSessionFactoryBean sqlSessionFactoryBean = new MybatisSqlSessionFactoryBean();
         // 配置数据源，此处配置为关键配置，如果没有将 dynamicDataSource作为数据源则不能实现切换
         sqlSessionFactoryBean.setDataSource(dynamicDataSource());
+        // 扫描model
+        sqlSessionFactoryBean.setTypeAliasesPackage("com.mumu.model");
         // 扫描映射文件
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources("classpath:/mapper/*Mapper.xml"));
+                .getResources("classpath:/mapper/**/*Mapper.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 }
